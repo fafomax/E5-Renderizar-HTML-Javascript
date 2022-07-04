@@ -42,4 +42,3 @@ export const pizzas = [
     img: "./assets/6_pizzaRoquefort.jpg",
   },
 ];
-localStorage.setItem("pizzas", JSON.stringify(pizzas));
