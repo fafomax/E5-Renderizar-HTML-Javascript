@@ -1,24 +1,20 @@
 import { pizzas } from "./dataBase.js";
 import { errorMessage } from "./error.js";
 
-// Variables
 const btnInput = document.querySelector(".btnInput");
 export const result = document.querySelector(".container");
 const nameInput = document.querySelector(".nameInput");
 export const spinnerDiv = document.querySelector(".spinner");
-export const errorResult = document.querySelector(".error-div");
+export const errorResult = document.querySelector(".error");
 
 window.addEventListener("DOMContentLoaded", () => {
-  // Send array to localstorage
   localStorage.setItem("pizzas", JSON.stringify(pizzas));
   showPizzas();
   btnInput.addEventListener("click", searchPizza);
 });
 
 const showPizzas = () => {
-  // Traemos localstorage y lo almacenamos en una variable local como array con el JSON.parse
   let pizzasFromLocal = JSON.parse(localStorage.getItem("pizzas"));
-  // console.log(pizzasFromLocal);
 
   pizzas.forEach((pizza) => {
     const { id, img, ingredientes, nombre, precio } = pizza;
@@ -41,8 +37,6 @@ const searchPizza = () => {
     (pizza) => pizza.nombre.toUpperCase() === nameInput.value.toUpperCase()
   );
 
-  // console.log(pizzaName)
-
   if (nameInput.value == "") {
     cleanError();
     errorMessage("Debe ingresar el nombre de la pizza");
@@ -61,7 +55,6 @@ const showSelected = (pizzaName) => {
   const pizzaDiv = document.createElement("div");
   pizzaDiv.classList.add("result-container");
 
-  // Spinner
   spinnerDiv.classList.remove("hidden");
 
   setTimeout(() => {

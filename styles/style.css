@@ -46,10 +46,12 @@ lord-icon {
   text-decoration: none;
   text-shadow: 4px 4px 5px #854629;
 }
+
 .btnSearch:hover {
   background: linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
   background-color: #bc3315;
 }
+
 .btnSearch:active {
   position: relative;
   top: 1px;
@@ -67,7 +69,7 @@ lord-icon {
 }
 
 .error {
-  background-color: red;
+  background-color: var(--navBG);
   text-align: center;
   padding: 10px;
   text-transform: uppercase;
@@ -96,15 +98,17 @@ lord-icon {
   border-radius: 10px;
   text-align: center;
   height: 400px;
-  background-image: linear-gradient(
-    to left top,
-    #ffab4f,
-    #fdb351,
-    #fcbc54,
-    #f9c458,
-    #f7cc5d
-  );
+  background-image: linear-gradient(to left top,
+      #ffab4f,
+      #fdb351,
+      #fcbc54,
+      #f9c458,
+      #f7cc5d);
   box-shadow: 0px 10px 37px 8px rgba(0, 0, 0, 0.4);
+}
+
+.result-container h2 {
+  font-family: "Ubuntu", sans-serif;
 }
 
 .result-container img {
@@ -116,17 +120,17 @@ lord-icon {
 .imgDiv {
   width: 90%;
 }
+
 .spinner {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10rem;
 }
+
 .loader {
-  border: 16px solid #f3f3f3;
-  /* Light grey */
-  border-top: 16px solid #3498db;
-  /* Blue */
+  border: 16px solid #f3f3f363;
+  border-top: 16px solid var(--navBG);
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -142,6 +146,7 @@ lord-icon {
     transform: rotate(360deg);
   }
 }
+
 .hidden {
   display: none;
 }
